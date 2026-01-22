@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const GITHUB_RELEASES_API = 'https://api.github.com/repos/zeemarquez/modern-markdown-editor/releases/latest';
+const GITHUB_RELEASES_API = 'https://api.github.com/repos/zeemarquez/modern-markdown-landing-page/releases/latest';
 
 // Detect user's operating system
 const detectOS = (): 'windows' | 'macos' | 'other' => {

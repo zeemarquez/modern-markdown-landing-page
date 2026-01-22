@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
           </div>
           
           <div className="flex items-center gap-4">
-            <a href="https://github.com/zeemarquez/modern-markdown-editor" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground hidden sm:block">
+            <a href="https://github.com/zeemarquez/modern-markdown-landing-page" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground hidden sm:block">
               <Github size={20} />
             </a>
             {downloadUrl ? (

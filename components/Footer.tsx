@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
           </p>
           <div className="flex items-center gap-6 text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors"><Twitter size={20} /></a>
-            <a href="https://github.com/zeemarquez/modern-markdown-editor" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors"><Github size={20} /></a>
+            <a href="https://github.com/zeemarquez/modern-markdown-landing-page" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors"><Github size={20} /></a>
             <a href="#" className="hover:text-foreground transition-colors"><Linkedin size={20} /></a>
           </div>
         </div>
