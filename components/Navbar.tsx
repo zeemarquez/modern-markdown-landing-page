@@ -1,8 +1,11 @@
 import React from 'react';
 import { PenTool, Github } from 'lucide-react';
 import Button from './ui/Button';
+import { useDownloadUrl } from '../hooks/useDownloadUrl';
 
 const Navbar: React.FC = () => {
+  const { downloadUrl, isLoading } = useDownloadUrl();
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,17 +17,23 @@ const Navbar: React.FC = () => {
             <span className="font-bold text-lg tracking-tight">Modern Markdown</span>
           </div>
           
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#templates" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Templates</a>
-            <a href="#showcase" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Showcase</a>
-          </div>
-
           <div className="flex items-center gap-4">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground hidden sm:block">
+            <a href="https://github.com/zeemarquez/modern-markdown-editor" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground hidden sm:block">
               <Github size={20} />
             </a>
-            <Button size="sm">Download Now</Button>
+            {downloadUrl ? (
+              <a
+                href={downloadUrl}
+                download
+                className="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 bg-foreground text-background hover:bg-foreground/90 focus:ring-foreground h-8 px-3 text-xs"
+              >
+                Download Now
+              </a>
+            ) : (
+              <Button size="sm" disabled={isLoading}>
+                {isLoading ? 'Loading...' : 'Download Now'}
+              </Button>
+            )}
           </div>
         </div>
       </div>

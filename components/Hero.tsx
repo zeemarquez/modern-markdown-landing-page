@@ -2,16 +2,15 @@ import React from 'react';
 import Button from './ui/Button';
 import MockInterface from './ui/MockInterface';
 import { Download, ArrowRight } from 'lucide-react';
+import { useDownloadUrl } from '../hooks/useDownloadUrl';
 
 const Hero: React.FC = () => {
+  const { downloadUrl, isLoading } = useDownloadUrl();
+
   return (
-    <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section className="relative pt-20 pb-24 md:pt-32 md:pb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-border mb-6">
-            <span className="flex h-2 w-2 rounded-full bg-green-500"></span>
-            <span className="text-xs font-medium text-muted-foreground">v2.0 is now available offline</span>
-          </div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6">
             Focus on writing. <br className="hidden md:block" />
             <span className="text-muted-foreground">We handle the rest.</span>
@@ -21,14 +20,30 @@ const Hero: React.FC = () => {
             Real-time PDF rendering, custom templates, and fully local privacy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto gap-2">
-              <Download size={18} />
-              Download for Free
-            </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2 group">
-              View Documentation
+            {downloadUrl ? (
+              <a
+                href={downloadUrl}
+                download
+                className="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 bg-foreground text-background hover:bg-foreground/90 focus:ring-foreground h-12 px-8 text-base w-full sm:w-auto gap-2"
+              >
+                <Download size={18} />
+                Download for Free
+              </a>
+            ) : (
+              <Button size="lg" className="w-full sm:w-auto gap-2" disabled={isLoading}>
+                <Download size={18} />
+                {isLoading ? 'Loading...' : 'Download for Free'}
+              </Button>
+            )}
+            <a
+              href="https://app.markdown-app.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 border border-border hover:bg-muted focus:ring-border bg-transparent h-12 px-8 text-base w-full sm:w-auto gap-2 group"
+            >
+              🚀 Launch online
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </a>
           </div>
         </div>
 

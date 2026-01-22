@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 
 interface CompareSliderProps {
   leftImage: string;
@@ -8,7 +8,20 @@ interface CompareSliderProps {
 
 const CompareSlider: React.FC<CompareSliderProps> = ({ leftImage, rightImage, className = '' }) => {
   const [sliderPos, setSliderPos] = useState(50);
+  const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+    
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -23,48 +36,53 @@ const CompareSlider: React.FC<CompareSliderProps> = ({ leftImage, rightImage, cl
   return (
     <div 
       ref={containerRef}
-      className={`relative overflow-hidden rounded-xl border border-border bg-white shadow-2xl h-[400px] md:h-[500px] cursor-col-resize select-none ${className}`}
+      className={`relative overflow-hidden rounded-xl border border-border bg-white shadow-2xl h-[600px] md:h-[700px] cursor-col-resize select-none ${className}`}
       onMouseMove={onMouseMove}
       onTouchMove={onTouchMove}
     >
-      {/* Right Image (Foreground) */}
-      <div className="absolute inset-0">
+      {/* Right Image (Background - Visual Mode) */}
+      <div className="absolute inset-0 overflow-hidden">
         <img 
           src={rightImage} 
           alt="Visual Mode" 
-          className="w-full h-full object-cover"
+          className="w-full object-cover"
+          style={{ height: '120%', transform: 'translateY(-8%)' }}
           onError={(e) => {
             (e.target as HTMLImageElement).src = `https://placehold.co/800x600/f4f4f5/71717a?text=Visual+Mode`;
           }}
         />
       </div>
 
-      {/* Left Image (Background clipped) */}
+      {/* Left Image (Foreground - Raw Mode, clipped) */}
       <div 
-        className="absolute inset-0 z-10 border-r-2 border-white shadow-xl" 
-        style={{ width: `${sliderPos}%` }}
+        className="absolute inset-0 z-10 overflow-hidden"
+        style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
       >
         <img 
           src={leftImage} 
           alt="Raw Mode" 
-          className="absolute inset-0 w-full h-full object-cover max-w-none"
-          style={{ width: containerRef.current?.offsetWidth }}
+          className="w-full object-cover"
+          style={{ height: '120%', transform: 'translateY(-8%)' }}
           onError={(e) => {
             (e.target as HTMLImageElement).src = `https://placehold.co/800x600/09090b/ffffff?text=Raw+Markdown`;
           }}
         />
       </div>
 
+      {/* Divider Line */}
+      <div 
+        className="absolute inset-y-0 z-20 w-0.5 bg-white shadow-lg pointer-events-none"
+        style={{ left: `${sliderPos}%` }}
+      />
+
       {/* Slider Handle */}
       <div 
-        className="absolute inset-y-0 z-20 w-1 bg-white shadow-lg pointer-events-none"
+        className="absolute top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border-2 border-border shadow-xl flex items-center justify-center pointer-events-none"
         style={{ left: `${sliderPos}%` }}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border-2 border-border shadow-xl flex items-center justify-center">
-          <div className="flex gap-0.5">
-            <div className="w-0.5 h-3 bg-muted-foreground rounded-full"></div>
-            <div className="w-0.5 h-3 bg-muted-foreground rounded-full"></div>
-          </div>
+        <div className="flex gap-0.5">
+          <div className="w-0.5 h-3 bg-muted-foreground rounded-full"></div>
+          <div className="w-0.5 h-3 bg-muted-foreground rounded-full"></div>
         </div>
       </div>
 

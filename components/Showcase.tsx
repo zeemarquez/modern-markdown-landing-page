@@ -6,16 +6,16 @@ import { Check } from 'lucide-react';
 const Showcase: React.FC = () => {
   // Using standard numerical naming with absolute paths
   const templateImages = [
-    '/resources/images/screenshots_templates/1.png',
-    '/resources/images/screenshots_templates/2.png',
-    '/resources/images/screenshots_templates/3.png',
-    '/resources/images/screenshots_templates/4.png',
+    'https://raw.githubusercontent.com/zeemarquez/modern-markdown-landing-page/refs/heads/main/resources/images/screenshots_templates/modern.png',
+    'https://raw.githubusercontent.com/zeemarquez/modern-markdown-landing-page/refs/heads/main/resources/images/screenshots_templates/modern_2.png',
+    'https://raw.githubusercontent.com/zeemarquez/modern-markdown-landing-page/refs/heads/main/resources/images/screenshots_templates/academic.png',
+    'https://raw.githubusercontent.com/zeemarquez/modern-markdown-landing-page/refs/heads/main/resources/images/screenshots_templates/dark.png',
   ];
 
   // Using absolute paths and URL encoding for spaces
   const appScreenshots = {
-    raw: '/resources/images/screenshots_app/Screenshot%202026-01-22%20102036.png',
-    visual: '/resources/images/screenshots_app/Screenshot%202026-01-22%20102110.png'
+    raw: 'https://raw.githubusercontent.com/zeemarquez/modern-markdown-landing-page/refs/heads/main/resources/images/screenshots_app/source_mode.png',
+    visual: 'https://raw.githubusercontent.com/zeemarquez/modern-markdown-landing-page/refs/heads/main/resources/images/screenshots_app/visual_mode.png'
   };
 
   return (
@@ -24,14 +24,14 @@ const Showcase: React.FC = () => {
         
         {/* Showcase 1: Templates Carousel */}
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2 order-2 lg:order-1 relative w-full">
+          <div className="lg:w-1/3 lg:max-w-md order-2 lg:order-1 relative w-full">
              <div className="absolute -inset-4 bg-yellow-100 rounded-full blur-3xl opacity-30"></div>
              <Carousel 
                images={templateImages} 
                className="relative z-10 scale-95 hover:scale-100 transition-transform duration-500" 
              />
           </div>
-          <div className="lg:w-1/2 order-1 lg:order-2 space-y-6">
+          <div className="lg:w-3/5 order-1 lg:order-2 space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Your documents, <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">your style.</span>
             </h2>
@@ -40,9 +40,10 @@ const Showcase: React.FC = () => {
             </p>
             <ul className="space-y-3">
               {[
-                'Over 20+ built-in document themes',
-                'Design system integration',
+                'Fully customizable templates',
+                'Front page, header, footer, and content customization',
                 'High-fidelity PDF export previews',
+                'Variable replacement for reusable content',
                 'Shareable style configurations'
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-foreground font-medium">
@@ -58,7 +59,7 @@ const Showcase: React.FC = () => {
 
         {/* Showcase 2: Raw vs Visual Slider */}
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2 space-y-6">
+          <div className="lg:w-1/3 space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Powerful under the hood. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Simple on the surface.</span>
@@ -77,7 +78,7 @@ const Showcase: React.FC = () => {
                 </div>
              </div>
           </div>
-          <div className="lg:w-1/2 relative w-full">
+          <div className="lg:w-2/3 relative w-full">
              <div className="absolute -inset-4 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
              <CompareSlider 
                leftImage={appScreenshots.raw}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit3, Eye, LayoutTemplate, FileJson, WifiOff, FileOutput } from 'lucide-react';
+import { Edit3, Eye, LayoutTemplate, FileJson, WifiOff, FileOutput, ClipboardCopy } from 'lucide-react';
 
 const features = [
   {
@@ -28,9 +28,9 @@ const features = [
     description: "Your data stays on your device. No cloud syncing required, ensuring total privacy and reliability."
   },
   {
-    icon: <Eye className="w-6 h-6" />,
-    title: "Live Preview",
-    description: "Keep track of the final output with a synchronized side-by-side preview pane."
+    icon: <ClipboardCopy className="w-6 h-6" />,
+    title: "Markdown paste",
+    description: "Paste directly from your favorite ai assitant and see instant preview of your document."
   }
 ];
 
