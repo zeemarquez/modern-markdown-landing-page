@@ -1,5 +1,5 @@
 import React from 'react';
-import { PenTool, Github } from 'lucide-react';
+import { PenTool } from 'lucide-react';
 import Button from './ui/Button';
 import { useDownloadUrl } from '../hooks/useDownloadUrl';
 
@@ -16,11 +16,8 @@ const Navbar: React.FC = () => {
             </div>
             <span className="font-bold text-lg tracking-tight">Modern Markdown</span>
           </div>
-          
+
           <div className="flex items-center gap-4">
-            <a href="https://github.com/zeemarquez/modern-markdown-landing-page" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground hidden sm:block">
-              <Github size={20} />
-            </a>
             {downloadUrl ? (
               <a
                 href={downloadUrl}

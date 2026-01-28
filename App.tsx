@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Showcase from './components/Showcase';
-import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -14,7 +13,6 @@ const App: React.FC = () => {
         <Features />
         <Showcase />
       </main>
-      <Footer />
     </div>
   );
 };
