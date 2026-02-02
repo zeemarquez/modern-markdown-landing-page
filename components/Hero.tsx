@@ -16,8 +16,8 @@ const Hero: React.FC = () => {
             <span className="text-muted-foreground">We handle the rest.</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            A minimalist, state of the art Markdown editor designed for speed and beauty.
-            Visual or raw editting modes,real-time pdf rendering, and fully customizable templates.
+            Draft, edit, and refine Markdown with AI-assisted writing, instant previews, and templates
+            tuned to your style and workflow.
           </p>
         </div>
         {/* Mockup Container */}
