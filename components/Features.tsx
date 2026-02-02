@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit3, Eye, LayoutTemplate, FileJson, WifiOff, FileOutput, ClipboardCopy } from 'lucide-react';
+import { Edit3, LayoutTemplate, FileJson, WifiOff, FileOutput, Sparkles } from 'lucide-react';
 
 const features = [
   {
@@ -13,9 +13,9 @@ const features = [
     description: "Design your documents with powerful templating. Control typography, spacing, and layout with ease."
   },
   {
-    icon: <FileOutput className="w-6 h-6" />,
-    title: "Real-time PDF",
-    description: "See your changes instantly. Our lightning-fast engine renders production-ready PDFs as you type."
+    icon: <Sparkles className="w-6 h-6" />,
+    title: "AI Assistant",
+    description: "Built-in AI helps you write and refine your markdown. Get suggestions and edits without leaving the editor."
   },
   {
     icon: <FileJson className="w-6 h-6" />,
@@ -28,9 +28,9 @@ const features = [
     description: "Your data stays on your device. No cloud syncing required, ensuring total privacy and reliability."
   },
   {
-    icon: <ClipboardCopy className="w-6 h-6" />,
-    title: "Markdown paste",
-    description: "Paste directly from your favorite ai assitant and see instant preview of your document."
+    icon: <FileOutput className="w-6 h-6" />,
+    title: "Real-time PDF",
+    description: "See your changes instantly. Our lightning-fast engine renders production-ready PDFs as you type."
   }
 ];
 

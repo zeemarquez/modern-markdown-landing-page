@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PenTool } from 'lucide-react';
 import Button from './ui/Button';
 import { useDownloadUrl } from '../hooks/useDownloadUrl';
@@ -10,14 +11,20 @@ const Navbar: React.FC = () => {
     <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="bg-foreground text-background p-1.5 rounded-lg">
               <PenTool size={20} />
             </div>
             <span className="font-bold text-lg tracking-tight">Modern Markdown</span>
-          </div>
+          </Link>
 
           <div className="flex items-center gap-4">
+            <Link
+              to="/features"
+              className="inline-flex items-center justify-center rounded-lg border border-border px-3 h-8 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            >
+              Features
+            </Link>
             <a
               href="https://app.markdown-app.com/"
               target="_blank"
