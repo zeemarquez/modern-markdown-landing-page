@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
             <span className="text-muted-foreground">We handle the rest.</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            Draft, edit, and refine Markdown with AI-assisted writing, instant previews, and templates
+            Write, edit, and refine beautiful documents with AI-assisted markdown writing, instant previews, and templates
             tuned to your style and workflow.
           </p>
         </div>
