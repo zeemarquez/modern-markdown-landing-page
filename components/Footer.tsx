@@ -1,5 +1,5 @@
 import React from 'react';
-import { PenTool, Twitter, Github, Linkedin } from 'lucide-react';
+import { Twitter, Github, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -8,10 +8,8 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-               <div className="bg-foreground text-background p-1.5 rounded-lg">
-                 <PenTool size={18} />
-               </div>
-               <span className="font-bold text-lg tracking-tight">Modern Markdown</span>
+               <img src="/lemba-logo.svg" alt="Lemba" className="h-7 w-auto" />
+               <span className="font-bold text-lg tracking-tight">Lemba</span>
             </div>
             <p className="text-muted-foreground max-w-sm">
               The last markdown editor you'll ever need. Built for performance, privacy, and beautiful typography.

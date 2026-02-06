@@ -5,7 +5,7 @@ import SupademoPlayer from './SupademoPlayer';
 import { Check } from 'lucide-react';
 
 const AI_EMBED_URL = 'https://app.supademo.com/embed/cml55v9va0271yi0iic22u11q?embed_v=2&utm_source=embed';
-const AI_EMBED_TITLE = 'Markdown Editor - New AI Feature';
+const AI_EMBED_TITLE = 'Lemba - New AI Feature';
 
 const Showcase: React.FC = () => {
   // Using standard numerical naming with absolute paths

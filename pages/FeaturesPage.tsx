@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import SupademoPlayer from '../components/SupademoPlayer';
 
 const AI_EMBED_URL = 'https://app.supademo.com/embed/cml55v9va0271yi0iic22u11q?embed_v=2&utm_source=embed';
-const AI_EMBED_TITLE = 'Markdown Editor - New AI Feature';
+const AI_EMBED_TITLE = 'Lemba - New AI Feature';
 
 const FeaturesPage: React.FC = () => {
   return (
