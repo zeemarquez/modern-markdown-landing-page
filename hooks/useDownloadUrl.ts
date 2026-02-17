@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const GITHUB_RELEASES_API = 'https://api.github.com/repos/zeemarquez/modern-markdown-landing-page/releases';
+const GITHUB_RELEASES_API = 'https://api.github.com/repos/zeemarquez/lemba/releases';
 
 type OS = 'windows' | 'macos' | 'other';
 type Arch = 'arm64' | 'x64' | 'unknown';

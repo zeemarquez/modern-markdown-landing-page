@@ -8,14 +8,14 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-               <img src="/lemba-logo.svg" alt="Lemba" className="h-7 w-auto" />
-               <span className="font-bold text-lg tracking-tight">Lemba</span>
+              <img src="/lemba-logo.svg" alt="Lemba" className="h-7 w-auto" />
+              <span className="font-bold text-lg tracking-tight">Lemba</span>
             </div>
             <p className="text-muted-foreground max-w-sm">
               The last markdown editor you'll ever need. Built for performance, privacy, and beautiful typography.
             </p>
           </div>
-          
+
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-foreground transition-colors">Themes</a></li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border gap-4">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Modern Markdown Editor. All rights reserved.

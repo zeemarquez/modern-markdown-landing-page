@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             </Button>
           )}
           <a
-            href="https://app.markdown-app.com/"
+            href="https://write.lemba.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 border border-border hover:bg-muted focus:ring-border bg-transparent h-12 px-8 text-base w-full sm:w-auto gap-2 group"

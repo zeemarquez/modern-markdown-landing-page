@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
               Features
             </Link>
             <a
-              href="https://app.markdown-app.com/"
+              href="https://write.lemba.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-lg border border-border px-3 h-8 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors hidden sm:flex"
