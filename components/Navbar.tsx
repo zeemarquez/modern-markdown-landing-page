@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Github } from 'lucide-react';
 import Button from './ui/Button';
 import { useDownloadUrl } from '../hooks/useDownloadUrl';
 
@@ -42,6 +43,15 @@ const Navbar: React.FC = () => {
                 {isLoading ? 'Loading...' : 'Download Now'}
               </Button>
             )}
+            <a
+              href="https://github.com/zeemarquez/lemba"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg border border-border h-8 w-8 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+              aria-label="GitHub Repository"
+            >
+              <Github size={16} />
+            </a>
           </div>
         </div>
       </div>
