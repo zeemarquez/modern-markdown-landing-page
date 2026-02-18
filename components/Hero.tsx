@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6">
             Focus on writing. <br className="hidden md:block" />
-            <span className="text-muted-foreground">We handle the rest.</span>
+            <span className="text-muted-foreground">Lemba handles the rest.</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
             Write, edit, and refine beautiful documents with AI-assisted markdown writing, instant previews, and templates
